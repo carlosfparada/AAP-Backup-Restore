@@ -1,0 +1,19 @@
+---
+
+- name: AAP Backup
+  hosts: 172.16.1.34
+  gather_facts: no
+  become: yes
+  tasks:
+
+  - name: Include Backup and Restore variables
+    include_vars: main.yml
+
+  - name: Perform AAP backup
+    command:
+      cmd: "{{ aap_backup_cmd }}"
+      chdir: "{{ aap_base_folder }}"
+  
+  - name: Move AAP backup files to folder
+    command: 
+      cmd: "move {{ aap_base_folder }} {{ aap_backup_folder }}"
