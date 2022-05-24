@@ -1,0 +1,22 @@
+---
+
+- name: AAP Restore
+  hosts: controller
+  gather_facts: no
+  become: yes
+  tasks:
+
+  - name: Include Backup and Restore variables
+    include_vars: main.yml
+
+  - name: Find AAP backup files
+    find:
+      paths: "{{ aap_backup_folder }}"
+      patterns: "{{ aap_backup_prefix }}"
+      file_type: any
+
+  - name: Perform AAP restore
+    command:
+      cmd: "{{ aap_restore_cmd }}"
+      chdir: "{{ aap_base_folder }}"
+  
