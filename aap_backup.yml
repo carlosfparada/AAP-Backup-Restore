@@ -26,5 +26,5 @@
   #   command: 
   #     cmd: "mv -f {{ aap_base_folder }}{{ aap_backup_prefix}} {{ aap_backup_folder }}"
 
-- name: Copy files from foo to bar
-  copy: remote_src=True src=/path/to/foo dest=/path/to/bar
+  #- name: Copy files from foo to bar
+  #  copy: remote_src=True src=/path/to/foo dest=/path/to/bar
