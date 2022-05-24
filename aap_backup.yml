@@ -14,6 +14,14 @@
       cmd: "{{ aap_backup_cmd }}"
       chdir: "{{ aap_base_folder }}"
   
-  - name: Move AAP backup files to backup folder
-    command: 
-      cmd: "mv -f {{ aap_base_folder }}{{ aap_backup_prefix}} {{ aap_backup_folder }}"
+  - name: Find AAP backup files
+    find:
+      paths: "{{ aap_base_folder }}"
+      patterns: "{{ aap_backup_prefix }}"
+      register: _files_to_move
+  - debug:
+      var: _files_to_move
+
+  # - name: Move AAP backup files to backup folder
+  #   command: 
+  #     cmd: "mv -f {{ aap_base_folder }}{{ aap_backup_prefix}} {{ aap_backup_folder }}"
