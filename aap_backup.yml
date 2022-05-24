@@ -18,6 +18,7 @@
     find:
       paths: "{{ aap_base_folder }}"
       patterns: "{{ aap_backup_prefix }}"
+      file_type: any
     register: _files_to_move
 
   - name: Copy AAP backup files to backup folder
