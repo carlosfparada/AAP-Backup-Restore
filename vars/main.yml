@@ -1,4 +1,5 @@
 ---
-aap_backup_cmd: "/root/ansible-automation-platform-setup-2.1.1-1/setup.sh -b"
+aap_backup_cmd: "./setup.sh -b"
 aap_base_folder: "/root/ansible-automation-platform-setup-2.1.1-1/"
+aap_backup_prefix: "automation-platform-backup-*"
 aap_backup_folder: "/root/ansible-backup/"

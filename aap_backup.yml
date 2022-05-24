@@ -16,4 +16,4 @@
   
   - name: Move AAP backup files to folder
     command: 
-      cmd: "move {{ aap_base_folder }} {{ aap_backup_folder }}"
+      cmd: "move {{ aap_base_folder }}/{{ aap_backup_prefix}} {{ aap_backup_folder }}"
