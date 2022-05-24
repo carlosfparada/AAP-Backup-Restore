@@ -1,7 +1,7 @@
 ---
 
 - name: AAP Backup
-  hosts: 172.16.1.34
+  hosts: controller
   gather_facts: no
   become: yes
   tasks:
