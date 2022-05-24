@@ -28,8 +28,8 @@
 
   - name: Copy AAP backup files to backup folder
     copy:
+      remote_src: true
       src: "{{ item }}"
       dest: "{{ aap_backup_folder }}"
     with_items: "{{ _files_to_move }}"
 
-    
