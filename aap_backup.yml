@@ -14,6 +14,6 @@
       cmd: "{{ aap_backup_cmd }}"
       chdir: "{{ aap_base_folder }}"
   
-  - name: Move AAP backup files to folder
+  - name: Move AAP backup files to backup folder
     command: 
       cmd: "mv -f {{ aap_base_folder }}{{ aap_backup_prefix}} {{ aap_backup_folder }}"
